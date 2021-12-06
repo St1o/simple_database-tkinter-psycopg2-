@@ -3,9 +3,8 @@ host = "127.0.0.1"
 user = "postgres"
 password = "123"
 db_name = "youth_festival"
-port = 5432
 
-# CONFORMITY A TABLE AND DATA   var = ['',]
+# CONFORMITY A TABLE AND DATA
 var1 = ['Dancers', 'dancers']
 var2 = ['Photographs', 'foto']
 var3 = ['Guests', 'guest']

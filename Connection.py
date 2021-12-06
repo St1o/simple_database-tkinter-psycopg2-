@@ -107,3 +107,54 @@ def create_ac(new_login, new_password):
         if connection:
             connection.close()
             print("[INFO] PostgreSQL connection close")
+
+
+# ATTEMPTING TO CREATE A NEW ACCOUNT
+def delete_data(delete_var, in_entry):
+    try:
+        connection = psycopg2.connect(
+            host=host,
+            user=user,
+            database=db_name,
+            password=password
+        )
+        connection.autocommit = True
+
+        with connection.cursor() as cursor:
+            cursor.execute(
+                """DELETE FROM {}
+                WHERE id={};""".format(delete_var, in_entry)
+            )
+            print(f'[INFO] Success delete from {in_entry} item {delete_var}')
+
+    except Exception as _ex:
+        print("INFO[Error] Error while working with PostgreSQL", _ex)
+    finally:
+        if connection:
+            connection.close()
+            print("[INFO] PostgreSQL connection close")
+
+
+def add_data(in_entry, add_var):
+    try:
+        connection = psycopg2.connect(
+            host=host,
+            user=user,
+            database=db_name,
+            password=password
+        )
+        connection.autocommit = True
+
+        with connection.cursor() as cursor:
+            cursor.execute(
+                """INSERT INTO {} VALUES
+                (default, {})""".format(add_var, in_entry)
+            )
+            print(f'[INFO] Success add data in {in_entry} item {add_var}')
+
+    except Exception as _ex:
+        print("INFO[Error] Error while working with PostgreSQL", _ex)
+    finally:
+        if connection:
+            connection.close()
+            print("[INFO] PostgreSQL connection close")
