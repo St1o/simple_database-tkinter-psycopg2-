@@ -5,3 +5,5 @@ Simple database with registration and watch data from DB. Realise with tkinter, 
 ---> Run 'Openly_window.py'
 
 ---> In file 'Config.py' you can configure a data for your database 
+
+-NO OOP-
