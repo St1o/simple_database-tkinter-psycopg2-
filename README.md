@@ -4,25 +4,35 @@ Simple database. Realise on python and PostgreSQL using tkinter, psycopg2.
 #tkinter #postgreSQL #psycopg2 #postgresql
 
 
----> Run
+---> RUN
 
 1. A data your database is configured in file 'Config.py'   
 2. Run 'Openly_window.py'
 
 
 
----> How to use?
+---> HOW TO USE?
 
 1\ The required table is selected in the window on the left and remains active
+
 2\ Press 'Receive'
+
 ADD DATA
+
 1\ The required table is selected in the window on the right and remains active
+
 2\ The data is filled in the row to the right
+
 3\ Press 'Add'
+
 Example: {id serial, name varchar(20), age smallinteger} - 'Alexey', 21
+
 DELETE DATA
+
 1\ The required table is selected in the window on the right and remains active
+
 2\ Select the ID to be deleted
+
 3\ Press 'Delete'
 
 
