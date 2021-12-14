@@ -1,6 +1,7 @@
 from tkinter import *
-from Connection import check
+from Connections import check, g
 from User_app import window
+from Admin_app import admin_window
 
 
 # CREATE LOGIN WINDOW
@@ -30,8 +31,15 @@ def enter():
 # SEND DATA IN BASE AND CHECK
 def input1(entry_login, entry_password):
     come = check(entry_login, entry_password)
-    if come[0] and come[1] == True:
-        print('[INFO] Logged in DataBase')
+    print(come[0], come[1])
+    if entry_password == 'admin':
+        if entry_login == 'admin':
+            print(f'Admin: [INFO ({g})] Logged in DataBase')
+            admin_window()
+        else:
+            pass
+    elif come[0] and come[1] == True:
+        print(f'[INFO ({g})] Logged in DataBase')
         window()
     else:
-        print('[INFO] Incorrect login or password')
+        print(f'[INFO ({g})] Incorrect login or password')

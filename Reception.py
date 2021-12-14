@@ -1,5 +1,5 @@
 from tkinter import *
-from Connection import create_ac
+from Connections import create_ac, check
 
 
 # CREATE ACCOUNT WINDOW
@@ -27,5 +27,12 @@ def create():
 
 # CREATE ACCOUNT IN DATABASE
 def create_in_db(new_login, new_password):
-    new = create_ac(new_login, new_password)
-    print('[INFO] Account successfully created')
+    entry_login, entry_password = new_login, new_password
+    come = check(entry_login, entry_password)
+    if come[0] and come[1] == True:
+        print('[INFO] This account already exist')
+    elif come[0] == True and come[1] != True:
+        print('[INFO] Account with this name exit')
+    else:
+        new = create_ac(new_login, new_password)
+        print('[INFO] Account successfully created')
